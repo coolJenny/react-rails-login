@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-  before_action :set_tag, only: [:show, :update, :destroy]
+  before_action :set_tag, only: [:show, :flashcards, :update, :destroy]
 
   # GET /tags
   def index
@@ -11,6 +11,10 @@ class TagsController < ApplicationController
   # GET /tags/1
   def show
     render json: @tag
+  end
+
+  def flashcards
+    @tag.flashcards
   end
 
   # POST /tags
